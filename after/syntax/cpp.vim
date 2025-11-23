@@ -141,6 +141,12 @@ elseif exists('g:cpp_experimental_template_highlight') && g:cpp_experimental_tem
                 \ contains=cppOperator,cCustomOperator,cCustomAngleBracketStart
 endif
 
+
+" C++ attributes
+syntax region cppAttribute matchgroup=cppAttributeBrackets start='\[\[' end=']]' contains=cString
+hi def link cppAttribute         Comment
+hi def link cppAttributeBrackets Comment
+
 " Alternative syntax that is used in:
 "  http://www.vim.org/scripts/script.php?script_id=3064
 "syn match cUserFunction "\<\h\w*\>\(\s\|\n\)*("me=e-1 contains=cType,cDelimiter,cDefine
